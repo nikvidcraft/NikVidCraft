@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NikVidCraft - Professional Video Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        header, .intro, .services, .portfolio, .cta, .contact, footer {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header, .cta {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+        }
+        header img, .portfolio img {
+            max-width: 150px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .intro, .services, .portfolio {
+            background-color: #eaeaea;
+        }
+        .portfolio img {
+            max-width: 300px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .cta a, .contact a {
+            text-decoration: none;
+            color: white;
+            background-color: #0078d7;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .cta a:hover, .contact a:hover {
+            background-color: #005bb5;
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+        }
+        /* Mouse Movement Animation */
+        header:hover, .intro:hover, .services:hover, .portfolio:hover, .cta:hover, .contact:hover, footer:hover {
+            background: radial-gradient(circle, #ffd700, transparent);
+            animation: glow 1s ease-out infinite;
+        }
+        @keyframes glow {
+            0% {box-shadow: 0 0 10px #ffd700;}
+            50% {box-shadow: 0 0 20px #ffd700;}
+            100% {box-shadow: 0 0 10px #ffd700;}
+        }
+        @keyframes floatEffect {
+            from {transform: translateY(-5px);}
+            to {transform: translateY(5px);}
+        }
+        section:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ffd700;
+            animation: floatEffect 0.8s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NikVidCraft</h1>
+        <p>Professional Video Editor with 5 Years of Experience</p>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="logo.jpg" alt="NikVidCraft Logo">
+        </a>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="intro">
+        <h2>Welcome to NikVidCraft</h2>
+        <p>Your one-stop destination for stunning video edits that captivate and inspire. Let me bring your vision to life!</p>
+    </section>
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Creative video editing</li>
+            <li>Corporate videos</li>
+            <li>Social media content</li>
+            <li>Event highlights</li>
+            <li>Music video editing</li>
+        </ul>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <p>Check out some of my recent projects:</p>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio1.jpg" alt="Portfolio Project 1">
+        </a>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio2.jpg" alt="Portfolio Project 2">
+        </a>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio3.jpg" alt="Portfolio Project 3">
+        </a>
+    </section>
+    <section class="cta">
+        <h2>Ready to Collaborate?</h2>
+        <p>Let’s bring your ideas to life! Reach out to me via email for exceptional video editing services.</p>
+        <a href="mailto:dragonballgoku23032004@gmail.com">Contact Me: dragonballgoku23032004@gmail.com</a>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Want to elevate your visuals? Get in touch!</p>
+        <p>Email: <a href="mailto:dragonballgoku23032004@gmail.com">dragonballgoku23032004@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918588910251">+91-8588910251</a></p>
+        <p>YouTube: <a href="https://www.youtube.com/@NikVidCraft" target="_blank">Visit My Channel</a></p>
+    </section>
+    <footer>
+        <p>© 2025 NikVidCraft | Your Vision, My Craft</p>
+    </footer>
+</body>
+</html>
