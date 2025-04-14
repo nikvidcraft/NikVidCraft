@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikVidCraft - Professional Video Editor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth; /* Smooth Scrolling */
+        }
+        /* Constantly Moving Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0078d7, #00bcd4, #ffd700, #ffc000);
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+        }
+        @keyframes moveBackground {
+            0% {background-position: 0% 0%;}
+            50% {background-position: 100% 100%;}
+            100% {background-position: 0% 0%;}
+        }
+        /* Floating Animation Based on Mouse Movement */
+        .floating-mouse {
+            position: relative;
+            transition: transform 0.1s ease-in-out;
+        }
+        body:hover .floating-mouse {
+            transform: translate3d(var(--mouse-x), var(--mouse-y), 0);
+        }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.6;
+            z-index: 1;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        .hero h1:hover {
+            text-shadow: 0 0 20px #ffd700, 0 0 40px #ffc000;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            z-index: 2;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .hero a {
+            text-decoration: none;
+            color: white;
+            background-color: #ffd700;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 2;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+        .hero a:hover {
+            background-color: #ffc000;
+            transform: scale(1.1);
+        }
+        /* About Section */
+        .about {
+            padding: 50px;
+            text-align: center;
+            background-color: #eaeaea;
+        }
+        .about h2 {
+            font-size: 2.5rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeInUp 3s ease-in-out;
+        }
+        /* Portfolio Section */
+        .portfolio {
+            position: relative;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        .portfolio video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .portfolio h2, .portfolio img {
+            z-index: 2;
+        }
+        .portfolio h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .portfolio img {
+            max-width: 300px;
+            margin: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .portfolio img:hover {
+            transform: scale(1.1);
+        }
+        /* Contact Section */
+        .contact {
+            padding: 50px;
+            text-align: center;
+            background-color: #0078d7;
+            color: white;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+        }
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .contact a {
+            text-decoration: none;
+            color: white;
+            background-color: #ffd700;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+        .contact a:hover {
+            background-color: #ffc000;
+            transform: scale(1.1);
+        }
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    <script>
+        // Mouse movement effect
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--mouse-x', `${(e.clientX - window.innerWidth / 2) * 0.05}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${(e.clientY - window.innerHeight / 2) * 0.05}px`);
+        });
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <video autoplay muted loop>
+            <source src="nikvidcraft-title-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1 class="floating-mouse">NikVidCraft</h1>
+        <p class="floating-mouse">Professional Video Editor | Capturing Your Vision</p>
+        <a class="floating-mouse" href="#contact">Get in Touch</a>
+    </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="floating-mouse">About Me</h2>
+        <p class="floating-mouse">Hello! I'm a passionate video editor with 5 years of experience. I specialize in crafting visually stunning videos that captivate and inspire audiences.</p>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <video autoplay muted loop>
+            <source src="portfolio-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h2 class="floating-mouse">My Work</h2>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio1.jpg" alt="Portfolio Project 1" class="floating-mouse">
+        </a>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio2.jpg" alt="Portfolio Project 2" class="floating-mouse">
+        </a>
+        <a href="https://www.youtube.com/@NikVidCraft" target="_blank">
+            <img src="portfolio3.jpg" alt="Portfolio Project 3" class="floating-mouse">
+        </a>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="floating-mouse">Contact Me</h2>
+        <p class="floating-mouse">Want to elevate your visuals? Email me directly:</p>
+        <a class="floating-mouse" href="mailto:dragonballgoku23032004@gmail.com">dragonballgoku23032004@gmail.com</a>
+    </section>
+    <footer>
+        <p>© 2025 NikVidCraft | Your Vision, My Craft</p>
+   
